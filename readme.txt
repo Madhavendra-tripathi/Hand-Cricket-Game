@@ -4,7 +4,7 @@ Rules to play:
 
 
 Features:
-1. After every ball I have provided stats to look at it how you can improve your stratigies
+1. After every ball I have to provided stats to look at it how you can improve your stratigies
 2. After the completion of match you can restart game by "y" or if you want to exit press command "n" .
 3. It follows all the rules we use to play physically in the game.
 
