@@ -15,12 +15,14 @@
         let Uruncount = document.getElementById("Uruncount");
         let Cruncount = document.getElementById("Cruncount");
         let attemptC = document.getElementById("attemptC");
+        let pmp = document.getElementById("pmp");
         let close = document.getElementById("close");
         let stbtn = document.getElementById("stbtn");
+        let rtbtn = document.getElementById("rtbtn");
         let strtbtn = document.getElementById("strtbtn");
         let popupmssg = document.getElementById("popupmssg");
         let ppbox = document.getElementById("ppbox");
-        let pmp = document.getElementById("pmp");
+        // let pmp = document.getElementById("pmp");
         let mssg1 = document.getElementById("mssg1");
         let mssg2 = document.getElementById("mssg2");
         let full = document.getElementById("full");
@@ -36,31 +38,37 @@
         function onef() {
           ubtn.innerHTML = one.value;
           cbtn.innerHTML = computerVal();
+          attempt=attempt+1
           stats()
         }
         function twof() {
           ubtn.innerHTML = two.value;
           cbtn.innerHTML = computerVal();
+          attempt=attempt+1
           stats()
         }
         function threef() {
           ubtn.innerHTML = three.value;
           cbtn.innerHTML = computerVal();
+          attempt=attempt+1
           stats()
         }
         function fourf() {
           ubtn.innerHTML = four.value;
           cbtn.innerHTML = computerVal();
+          attempt=attempt+1
           stats()
         }
         function fivef() {
           ubtn.innerHTML = five.value;
           cbtn.innerHTML = computerVal();
+          attempt=attempt+1
           stats()
         }
         function sixf() {
           ubtn.innerHTML = six.value;
           cbtn.innerHTML = computerVal();
+          attempt=attempt+1
           stats()
         }
 
@@ -70,33 +78,63 @@
         }
 
         function stats(){
-          if (ubtn.innerText===comp.innerText){
-            run=parseInt(ubtn.innerText)+run
-            crun=parseInt(cbtn.innerText)+crun
-            attempt=attempt+1
-            Uruncount.innerText=`Total your run: ${run}`
-            Cruncount.innerText=`Total computer run: ${crun}`
-            attemptC.innerText=`Ball count is ${attempt}`
-            attempt=0
-            run=0
-            crun=0
-            result.innerText="OUT"
-            
+          if(tBat===true && tBall===false){
+            if(attempt>=(pmp.value*6)){
+             attemptC.innerText=`Ball count is ${attempt} finish`;
+              
+            }
+            else{
+              attemptC.innerText=`Ball count is ${attempt}`
+            }
+          }
+         else if(tBat===false && tBall===true) {
+            if(attempt>=(pmp.value*6)){
+             attemptC.innerText=`Ball count is ${attempt} finish`;
+              
+            }
+            else{
+              attemptC.innerText=`Ball count is ${attempt}`
+            }
           }
           else{
-            result.innerText="Continue"
-            run=parseInt(ubtn.innerText)+run
-            Uruncount.innerText=`You run count is ${run}`
-            crun=parseInt(cbtn.innerText)+crun
-            Cruncount.innerText=`Computer run count is ${crun}`
-            attempt=attempt+1
-            attemptC.innerText=`Ball count is ${attempt}`
+            console.log("ok")
           }
+
+
+          // if (ubtn.innerText===comp.innerText){
+          //   run=parseInt(ubtn.innerText)+run
+          //   crun=parseInt(cbtn.innerText)+crun
+          //   attempt=attempt+1
+          //   Uruncount.innerText=`Total your run: ${run}`
+          //   Cruncount.innerText=`Total computer run: ${crun}`
+          //   attemptC.innerText=`Ball count is ${attempt}`
+          //   attempt=0
+          //   run=0
+          //   crun=0
+          //   result.innerText="OUT"
+            
+          // }
+          // else{
+          //   result.innerText="Continue"
+          //   run=parseInt(ubtn.innerText)+run
+          //   Uruncount.innerText=`You run count is ${run}`
+          //   crun=parseInt(cbtn.innerText)+crun
+          //   Cruncount.innerText=`Computer run count is ${crun}`
+          //   attempt=attempt+1
+          //   attemptC.innerText=`Ball count is ${attempt}`
+          // }
 
         }
 
 
         stbtn.addEventListener('click',()=>{
+          popupmssg.style.display="flex"
+          ppbox.style.display="flex"
+          strtbtn.style.display="none"
+          full.style.display="none"
+
+        })
+        rtbtn.addEventListener('click',()=>{
           popupmssg.style.display="flex"
           ppbox.style.display="flex"
           strtbtn.style.display="none"
