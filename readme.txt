@@ -12,3 +12,6 @@ Features:
 Features can be added in future:
 1. Currently the game is working on player vs computer method.
 2. I want to transfer game on web browser and want to conduct in between two player from different location can play.
+
+
+current remaining task:toss, 2 user system
