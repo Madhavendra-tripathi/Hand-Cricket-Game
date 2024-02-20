@@ -1,6 +1,3 @@
-// function to be added:
-//  1. add features to ask number of overs and implement it,(for it implement buttton start game on the place of 1,2,3 pad)
-//  2. And work on users and computers turn
 
 let one = document.getElementById("one");
 let two = document.getElementById("two");
@@ -29,6 +26,7 @@ let full = document.getElementById("full");
 let bat = document.getElementById("bat");
 let ball = document.getElementById("ball");
 let toss = document.getElementById("toss");
+let winner = document.getElementById("winner");
 let tBat = false;
 let tBall = false;
 let batting = false;
@@ -127,9 +125,11 @@ function stats() {
     UserBat();
   } else if (tBat === false && tBall === true) {
     UserBall();
+
   } else {
-    console.log("ok");
+    console.log("Both balling and batting done");
   }
+  
 }
 
 stbtn.addEventListener("click", () => {
