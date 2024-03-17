@@ -1,6 +1,3 @@
-//Declare out and winner
-//Disappear number board
-// Make stats UI
 let one = document.getElementById("one");
 let two = document.getElementById("two");
 let three = document.getElementById("three");
