@@ -99,7 +99,7 @@ function UserBat() {
       console.log("User Batting done");
       // run = parseInt(ubtn.innerText) + run;
       // Uruncount.innerText = `your run total is ${run} `;
-      unumr.innerText=`${run}(${attempt})`;
+      unumr.innerText=`${run}*(${attempt})`;
       batting = true;
       tBat = false;
       tBall = true;
@@ -210,7 +210,7 @@ function UserBall() {
       } else if (batting === true && ubtn.innerText === cbtn.innerText) {
         // attemptC.innerText = `Comp Ball count is ${attempt}`;
         // Cruncount.innerText = `Comp run is ${crun} and comp out`;
-        cnumr.innerText=`${crun}(${attempt})`;
+        cnumr.innerText=`${crun}*(${attempt})`;
         cnumo.innerText="OUT";
         cnumo.style.color="red";
         if (run > crun) {

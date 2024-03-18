@@ -299,6 +299,8 @@
     width: 50%;
     line-height: 45px;
     border-left: 1px solid wheat;
+    border-right: 1px solid wheat;
+    border-top: 1px solid wheat;
     
 }
 .uruns p{
@@ -310,6 +312,8 @@
     height: 100%;
     line-height: 45px;
     border-right: 1px solid wheat;
+    border-left: 1px solid wheat;
+    border-top: 1px solid wheat;
 }
 .cruns p{
     width: 100%;
@@ -334,6 +338,8 @@
 }
 #cnum{
     border-right: 1px solid wheat;
+    border-left: 1px solid wheat;
+    border-bottom: 1px solid wheat;
 }
 #cnum #cnumo{
     color: lime;
@@ -342,7 +348,9 @@
 }
 
 #unum{
+    border-right: 1px solid wheat;
     border-left: 1px solid wheat;
+    border-bottom: 1px solid wheat;
 }
 #unum #unumo{
     color: lime;
@@ -358,7 +366,7 @@
 }
 .winT #winner{
     line-height: 40px;
-    font-size: 25px;
+    font-size: 22px;
 }
 
 
