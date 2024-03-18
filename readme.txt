@@ -6,7 +6,7 @@
         <p>5. While selecting keys I have added some shortcut keys like, click R or r to restart the game, B or b for bating and G or g for balling choosing while toss.</p>
     
 
-Features can be added in future:
+Upcoming features in future:
 1. Currently the game is working on player vs computer method, my target is to transfer
  game on web browser and want to conduct in between two player from different location
 can play.
