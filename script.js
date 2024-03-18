@@ -11,6 +11,12 @@ let result = document.getElementById("result");
 let Uruncount = document.getElementById("Uruncount");
 let Cruncount = document.getElementById("Cruncount");
 let attemptC = document.getElementById("attemptC");
+
+let unumr=document.getElementById("unumr")
+let cnumr=document.getElementById("cnumr")
+let unumo=document.getElementById("unumo")
+let cnumo=document.getElementById("cnumo")
+
 let pmp = document.getElementById("pmp");
 let close = document.getElementById("close");
 let stbtn = document.getElementById("stbtn");
@@ -86,6 +92,176 @@ function stats() {
   }
 }
 
+function UserBat() {
+  //Computer Balling
+  if (batting === false) {
+    if (attempt > pmp.value * 6) {
+      console.log("User Batting done");
+      // run = parseInt(ubtn.innerText) + run;
+      // Uruncount.innerText = `your run total is ${run} `;
+      unumr.innerText=`${run}(${attempt})`;
+      batting = true;
+      tBat = false;
+      tBall = true;
+      attempt = 1;
+      stats();
+    } else if (attempt <= pmp.value * 6) {
+      if (
+        attempt > 0 &&
+        batting === false &&
+        balling === false &&
+        ubtn.innerText === cbtn.innerText
+      ) {
+        // attemptC.innerText = `U Ball count is ${attempt}`;
+        // Uruncount.innerText = `Your run is ${run} and you are out`;
+        unumr.innerText=`${run}(${attempt})`;
+        unumo.innerText="OUT";
+        unumo.style.color="red";
+        batting = true;
+        tBat = false;
+        tBall = true;
+        attempt = 0;
+        return;
+      } else if (balling === true && ubtn.innerText === cbtn.innerText) {
+        // attemptC.innerText = `U Ball count is ${attempt}`;
+        // Uruncount.innerText = `Your run is ${run} and you are out`;
+        unumr.innerText=`${run}(${attempt})`;
+        unumo.innerText="OUT";
+        unumo.style.color="red";
+        if (crun > run) {
+          winner.innerText = "Comp WON the match";
+          strtbtn.style.display = "flex";
+          stbtn.value = "New Game";
+        } else if (run === crun) {
+          //getting out when both are on equal run
+          winner.innerText = "Match DRAWN";
+          strtbtn.style.display = "flex";
+          stbtn.value = "New Game";
+        } else {
+          winner.innerText = "No result";
+        }
+        return;
+      }
+      run = parseInt(ubtn.innerText) + run;
+      unumr.innerText=`${run}*(${attempt})`;
+      // attemptC.innerText = `U Ball count is ${attempt}`;
+      // Uruncount.innerText = `Your run is ${run} `;
+
+      if (balling === true && run > crun) {
+        winner.innerText = `You WON the match`;
+        strtbtn.style.display = "flex";
+        stbtn.value = "New Game";
+      }
+
+      //Code for last ball: Draw last ball pe hota hai
+      if (
+        balling === true &&
+        attempt === pmp.value * 6
+      ) {
+        if(crun==run){
+          winner.innerText = "Match DRAWN";
+          strtbtn.style.display = "flex";
+          stbtn.value = "New Game";
+        }
+        else if(crun>run){
+          winner.innerText = "Comp WON the match on last ball";
+          strtbtn.style.display = "flex";
+          stbtn.value = "New Game";
+        }
+      }
+
+    } else {
+      // attemptC.innerText = `U Ball count is ${attempt}`;
+      console.log("Something might be wrong in UserBat function");
+    }
+  }
+}
+
+function UserBall() {
+  //Computer Batting
+  if (balling === false) {
+    if (attempt > pmp.value * 6) {
+      console.log("User Balling done");
+      // crun = parseInt(cbtn.innerText) + crun;
+      // Cruncount.innerText = `comp run total is ${crun} `;
+      cnumr.innerText=`${crun}*(${attempt})`;
+      balling = true;
+      tBat = true;
+      tBall = false;
+      attempt = 1;
+      stats();
+    } else if (attempt <= pmp.value * 6) {
+      if (
+        attempt > 0 &&
+        batting === false &&
+        balling === false &&
+        ubtn.innerText === cbtn.innerText
+      ) {
+        // attemptC.innerText = `Comp Ball count is ${attempt}`;
+        // Cruncount.innerText = `Comp run is ${crun} and comp out`;
+        cnumr.innerText=`${crun}(${attempt})`;
+        cnumo.innerText="OUT";
+        cnumo.style.color="red";
+        balling = true;
+        tBat = true;
+        tBall = false;
+        attempt = 0;
+        return;
+      } else if (batting === true && ubtn.innerText === cbtn.innerText) {
+        // attemptC.innerText = `Comp Ball count is ${attempt}`;
+        // Cruncount.innerText = `Comp run is ${crun} and comp out`;
+        cnumr.innerText=`${crun}(${attempt})`;
+        cnumo.innerText="OUT";
+        cnumo.style.color="red";
+        if (run > crun) {
+          winner.innerText = "You WON the match";
+          strtbtn.style.display = "flex";
+          stbtn.value = "New Game";
+        } else if (run === crun) {
+          //getting out when both are on equal run
+          winner.innerText = "Match DRAWN";
+          strtbtn.style.display = "flex";
+          stbtn.value = "New Game";
+        } else {
+          winner.innerText = "No result";
+        }
+        return;
+      }
+
+      crun = parseInt(cbtn.innerText) + crun;
+      cnumr.innerText=`${crun}*(${attempt})`;
+      // attemptC.innerText = `Comp Ball count is ${attempt}`;
+      // Cruncount.innerText = `comp run is ${crun} `;
+
+      if (batting === true && crun > run) {
+        winner.innerText = "Oops You loose the match";
+        strtbtn.style.display = "flex";
+        stbtn.value = "New Game";
+      }
+      stbtn.value = "New Game";
+
+      //Code for last ball: Draw last ball pe hota hai
+      if (
+        batting === true &&
+        attempt === pmp.value * 6
+      ) {
+        if(crun==run){
+          winner.innerText = "Match DRAWN";
+          strtbtn.style.display = "flex";
+          stbtn.value = "New Game";
+        }
+        else if(run>crun){
+          winner.innerText = "You WON the match on last ball";
+          strtbtn.style.display = "flex";
+          stbtn.value = "New Game";
+        }
+      }
+    } else {
+            console.log("Something might be wrong in UserBall function");
+    }
+  }
+}
+
 stbtn.addEventListener("click", () => {
   popupmssg.style.display = "flex";
   ppbox.style.display = "flex";
@@ -103,8 +279,6 @@ window.addEventListener("keydown", (e) => {
     ppbox.style.display = "flex";
     strtbtn.style.display = "none";
     full.style.display = "none";
-    Uruncount.innerText = `your run is ${run} `;
-    Cruncount.innerText = `comp run is ${crun} `;
     attempt = 0;
     run = 0;
     crun = 0;
@@ -120,8 +294,6 @@ rtbtn.addEventListener("click", () => {
   strtbtn.style.display = "none";
   attempt = 0;
   full.style.display = "none";
-  Uruncount.innerText = `your run is ${run} `;
-  Cruncount.innerText = `comp run is ${crun} `;
   tBall = false;
   tBat = false;
   bat.style.border = "8px double white";
@@ -145,10 +317,16 @@ close.addEventListener("click", (e) => {
     run = 0;
     crun = 0;
     chase = 0;
-    Uruncount.innerText = `your run is ${run} `;
-    Cruncount.innerText = `comp run is ${crun} `;
-    attemptC.innerText = "Ball count is 0";
-    winner.innerText = "";
+    // Uruncount.innerText = `your run is ${run} `;
+    // Cruncount.innerText = `comp run is ${crun} `;
+    // attemptC.innerText = "Ball count is 0";
+    unumr.innerText="0(0)"
+    cnumr.innerText="0(0)"
+    unumo.innerText="NOT OUT"
+    cnumo.innerText="NOT OUT"
+    unumo.style.color="lime"
+    cnumo.style.color="lime"
+    winner.innerText = "Winner";
   }
 });
 
@@ -200,121 +378,3 @@ window.addEventListener("blur", () => {
 window.addEventListener("focus", () => {
   document.title = "Hand Cricket";
 });
-
-function UserBat() {
-  //Computer Balling
-  if (batting === false) {
-    if (attempt > pmp.value * 6) {
-      console.log("User Batting done");
-      // run = parseInt(ubtn.innerText) + run;
-      // Uruncount.innerText = `your run total is ${run} `;
-      batting = true;
-      tBat = false;
-      tBall = true;
-      attempt = 1;
-      stats();
-    } else if (attempt <= pmp.value * 6) {
-      if (
-        attempt > 0 &&
-        batting === false &&
-        balling === false &&
-        ubtn.innerText === cbtn.innerText
-      ) {
-        attemptC.innerText = `U Ball count is ${attempt}`;
-        Uruncount.innerText = `Your run is ${run} and you are out`;
-        batting = true;
-        tBat = false;
-        tBall = true;
-        attempt = 0;
-        return;
-      } else if (balling === true && ubtn.innerText === cbtn.innerText) {
-        attemptC.innerText = `U Ball count is ${attempt}`;
-        Uruncount.innerText = `Your run is ${run} and you are out`;
-        if (crun > run) {
-          winner.innerText = "Comp WON the match";
-        } else if (run === crun) {
-          //getting out when both are on equal run
-          winner.innerText = "Match DRAWN";
-        } else {
-          winner.innerText = "No result";
-        }
-        return;
-      }
-      attemptC.innerText = `U Ball count is ${attempt}`;
-      run = parseInt(ubtn.innerText) + run;
-      Uruncount.innerText = `Your run is ${run} `;
-
-      if (balling === true && run > crun) {
-        winner.innerText = `You WON the match`;
-      }
-
-      //Code for last ball: Draw last ball pe hota hai
-      if(balling=== true && (attempt===(2*pmp.value*6)-1) && run===crun){
-        winner.innerText = "Match DRAWN";
-      }
-    } else {
-      // attemptC.innerText = `U Ball count is ${attempt}`;
-      console.log("Something might be wrong in UserBat function");
-    }
-  }
-}
-
-function UserBall() {
-  //Computer Batting
-  if (balling === false) {
-    if (attempt > pmp.value * 6) {
-      console.log("User Balling done");
-      // crun = parseInt(cbtn.innerText) + crun;
-      // Cruncount.innerText = `comp run total is ${crun} `;
-      balling = true;
-      tBat = true;
-      tBall = false;
-      attempt = 1;
-      stats();
-    } else if (attempt <= pmp.value * 6) {
-      if (
-        attempt > 0 &&
-        batting === false &&
-        balling === false &&
-        ubtn.innerText === cbtn.innerText
-      ) {
-        attemptC.innerText = `Comp Ball count is ${attempt}`;
-        Cruncount.innerText = `Comp run is ${crun} and comp out`;
-        balling = true;
-        tBat = true;
-        tBall = false;
-        attempt = 0;
-        return;
-      } else if (batting === true && ubtn.innerText === cbtn.innerText) {
-        attemptC.innerText = `Comp Ball count is ${attempt}`;
-        Cruncount.innerText = `Comp run is ${crun} and comp out`;
-
-        if (run > crun) {
-          winner.innerText = "You WON the match";
-        } else if (run === crun) {
-          //getting out when both are on equal run
-          winner.innerText = "Match DRAWN";
-        } else {
-          winner.innerText = "No result";
-        }
-        return;
-      }
-
-      attemptC.innerText = `Comp Ball count is ${attempt}`;
-      crun = parseInt(cbtn.innerText) + crun;
-      Cruncount.innerText = `comp run is ${crun} `;
-
-      if (batting === true && crun > run) {
-        winner.innerText = "Oops You loose the match";
-      }
-      
-      //Code for last ball: Draw last ball pe hota hai
-      if(batting=== true && (attempt===(2*pmp.value*6)-1) && run===crun){
-        winner.innerText = "Match DRAWN";
-      }
-    } else {
-      // attemptC.innerText = `Comp Ball count is ${attempt}`;
-      console.log("Something might be wrong in UserBall function");
-    }
-  }
-}
