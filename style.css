@@ -187,7 +187,7 @@
 }
 
 .foot{
-    margin-top: 60px;
+    margin-top: 40px;
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -385,4 +385,11 @@
     padding-left: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+.context{
+    display: flex;
+    height: 30px;
+    font-size: 20px;
+    justify-content: space-around;
 }

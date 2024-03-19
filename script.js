@@ -99,7 +99,7 @@ function UserBat() {
       console.log("User Batting done");
       // run = parseInt(ubtn.innerText) + run;
       // Uruncount.innerText = `your run total is ${run} `;
-      unumr.innerText=`${run}*(${attempt})`;
+      // unumr.innerText=`${run}*(${attempt})`;
       batting = true;
       tBat = false;
       tBall = true;
@@ -184,7 +184,7 @@ function UserBall() {
       console.log("User Balling done");
       // crun = parseInt(cbtn.innerText) + crun;
       // Cruncount.innerText = `comp run total is ${crun} `;
-      cnumr.innerText=`${crun}*(${attempt})`;
+      // cnumr.innerText=`${crun}*(${attempt})`;
       balling = true;
       tBat = true;
       tBall = false;
@@ -317,6 +317,8 @@ close.addEventListener("click", (e) => {
     run = 0;
     crun = 0;
     chase = 0;
+    ubtn.innerText="0"
+    cbtn.innerText="0"
     // Uruncount.innerText = `your run is ${run} `;
     // Cruncount.innerText = `comp run is ${crun} `;
     // attemptC.innerText = "Ball count is 0";
@@ -333,7 +335,7 @@ close.addEventListener("click", (e) => {
 bat.addEventListener("click", () => {
   bat.style.border = "8px solid white";
   ball.style.border = "8px double white";
-  toss.innerText = "Toss: You choose to bat";
+  toss.innerText = `Toss: You choose to bat(${pmp.value} overs)`;
   tBall = false;
   tBat = true;
 });
@@ -344,7 +346,7 @@ window.addEventListener("keydown", (e) => {
     if (full.style.display === "none") {
       bat.style.border = "8px solid white";
       ball.style.border = "8px double white";
-      toss.innerText = "Toss: You choose to bat";
+      toss.innerText = `Toss: You choose to bat(${pmp.value} overs)`;
       tBall = false;
       tBat = true;
     }
@@ -354,7 +356,7 @@ window.addEventListener("keydown", (e) => {
 ball.addEventListener("click", () => {
   ball.style.border = "8px solid white";
   bat.style.border = "8px double white";
-  toss.innerText = "Toss: You choose to ball";
+  toss.innerText = `Toss: You choose to ball(${pmp.value} overs)`;
   tBall = true;
   tBat = false;
 });
@@ -365,7 +367,7 @@ window.addEventListener("keydown", (e) => {
     if (full.style.display === "none") {
       ball.style.border = "8px solid white";
       bat.style.border = "8px double white";
-      toss.innerText = "Toss: You choose to ball";
+      toss.innerText = `Toss: You choose to ball(${pmp.value} overs)`;
       tBall = true;
       tBat = false;
     }
