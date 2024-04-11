@@ -6,10 +6,3 @@
         <p>5. Here numbers are randomly generated, no prefixed patterns are followed. </p>
         <p>6. While selecting keys I have added some shortcut keys like, click R or r to restart the game, B or b for bating and G or g for balling.</p>
      
-
-Upcoming features in future:
-1. Currently the game is working on player vs computer method, my target is to transfer
- game on  player vs player, so two player from different location
- can play together.
-
-
