@@ -6,6 +6,7 @@
 }
 #body{
     background: rgb(31, 31, 31);
+    scroll-behavior: smooth;
     /* height: 100vh; */
 }
 #popupmssg{
@@ -17,7 +18,7 @@
     display: none;
     justify-content: center;
     align-items: center;
-    background: rgb(55, 55, 242);
+    background: linear-gradient(blue 40% ,white);
     
 }
 /* #full{
@@ -32,8 +33,8 @@
     justify-content: center;
     height: 450px;
     width: 45%;
+    /* background: transparent; */
     /* text-align: center; */
-    background: rgba(23, 23, 104, 0.2);
     border-radius: 20px;
     box-shadow: 0px 5px 50px 10px black;
 }
@@ -203,7 +204,7 @@
     align-items: center;
 }
 .strtbtn{
-    height: 34%;
+    height: 245px;
     position: absolute;
     width: 49%;
     border-radius: 20px;
@@ -392,4 +393,59 @@
     height: 30px;
     font-size: 20px;
     justify-content: space-around;
+}
+#one,#two,#three,#four,#five,#six{
+    font-size: 30px;
+}
+@media screen and (max-width: 480px) {
+   .user, .computer{
+    height: 80px;
+    width: 35%;
+   }
+
+   #ubtn, #cbtn{
+    font-size: 50px;
+    margin-top: 15px;
+   }
+   #rtbtn, #rll{
+    width: 30%;
+    font-size: 24px;
+    font-weight: 550;
+   }
+   #cb1{
+    margin-left: -24px;
+   }
+   #ub2{
+    margin-left: -23px;
+   }
+   .foot{
+    margin-top: 5px;
+    flex-direction: column;
+}
+    .stats{
+        margin: 20px auto;
+        width: 90%;
+    }
+    .guess{
+        width: 90%;
+        height: 200px;
+        margin: 5px auto;
+    }
+    .strtbtn{
+        height: 188px;
+        width: 87%;
+    }
+    #ppbox{
+        width: 90%;
+    }
+    #toss{
+        height: 16px;
+        font-size: 15px;
+    }
+    .winT #winner{
+        font-size: 20px;
+    }
+    #rules{
+        width: 90%;
+    }
 }

@@ -1,3 +1,4 @@
+hello
 let one = document.getElementById("one");
 let two = document.getElementById("two");
 let three = document.getElementById("three");
@@ -129,7 +130,7 @@ function UserBat() {
         unumo.innerText="OUT";
         unumo.style.color="red";
         if (crun > run) {
-          winner.innerText = "Comp WON the match";
+          winner.innerText = "Oops You loose the match";
           strtbtn.style.display = "flex";
           stbtn.value = "New Game";
         } else if (run === crun) {
@@ -164,7 +165,7 @@ function UserBat() {
           stbtn.value = "New Game";
         }
         else if(crun>run){
-          winner.innerText = "Comp WON the match on last ball";
+          winner.innerText = "Computer WON the match on last ball";
           strtbtn.style.display = "flex";
           stbtn.value = "New Game";
         }
@@ -271,6 +272,8 @@ stbtn.addEventListener("click", () => {
   tBat = false;
   bat.style.border = "8px double white";
   ball.style.border = "8px double white";
+  mssg1.innerText=""
+  mssg2.innerText=""
 });
 window.addEventListener("keydown", (e) => {
   let key = e.key;
@@ -286,6 +289,8 @@ window.addEventListener("keydown", (e) => {
     tBat = false;
     bat.style.border = "8px double white";
     ball.style.border = "8px double white";
+    mssg1.innerText=""
+  mssg2.innerText=""
   }
 });
 rtbtn.addEventListener("click", () => {
@@ -298,13 +303,20 @@ rtbtn.addEventListener("click", () => {
   tBat = false;
   bat.style.border = "8px double white";
   ball.style.border = "8px double white";
+  mssg1.innerText=""
+  mssg2.innerText=""
 });
 
 close.addEventListener("click", (e) => {
   if (pmp.value === "") {
     e.preventDefault();
     mssg1.innerText = "Select atleast 1 over to continue";
-  } else if (tBall === false && tBat === false) {
+  }
+  else if(pmp.value>50 ||pmp.value===50){
+    e.preventDefault();
+    mssg1.innerText = "Select 50 or less than 50 overs to continue";
+  }
+   else if (tBall === false && tBat === false) {
     e.preventDefault();
     mssg2.innerText = "Please select at least 1 option (bat or ball)";
   } else {
@@ -328,7 +340,7 @@ close.addEventListener("click", (e) => {
     cnumo.innerText="NOT OUT"
     unumo.style.color="lime"
     cnumo.style.color="lime"
-    winner.innerText = "Winner";
+    winner.innerText = "Result";
   }
 });
 

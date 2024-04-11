@@ -27,9 +27,9 @@
     <body id="body">
       <div id="popupmssg">
         <div id="ppbox">
-        <h4>Select number of over you want to play</h4>
+        <h4 align="center">Select number of over you want to play</h4>
         <input type="number" min="1" max="50" id="pmp" autofocus/>
-        <p id="mssg1"></p>
+        <p id="mssg1" align="center"></p>
         <h4>Select [b]at or [b]all</h4>
         <div class="opt">
           <img src="bat.png" id="bat"></img>
@@ -60,11 +60,41 @@
         </div>
       </div>
       <div class="context">
-        <p>Computer board</p>
-        <p>User board</p>
+        <p id="cb1">Computer board</p>
+        <p id="ub2">User board</p>
       </div>
       
       <div class="foot">
+        <div class="stats">
+          <div class="SHead">
+            <p class="sh3">Score</p>
+          </div>
+            <p id="toss">Toss</p>
+            <div class="runss">
+              <div class="cruns">
+                <p>Computer run</p>
+              </div>
+              <div class="uruns">
+                <p>Your run</p>
+              </div>
+            </div>
+        <div class="num">
+          <div id="cnum">
+            <p id="cnumr">0(0)</p>
+            <p id="cnumo">NOT OUT</p>
+          </div>
+          <div id="unum">
+            <p id="unumr">0(0)</p>
+            <p id="unumo">NOT OUT</p>
+          </div>
+        </div>
+        <!-- <p id="Uruncount">You run count is 0</p>
+        <p id="Cruncount"> Computer run count is 0</p>
+        <p id="attemptC">Ball count is 0</p> -->
+        <div class="winT">
+          <p id="winner">Result</p>
+        </div>
+      </div>
         <div class="guess">
           <div class="strtbtn" id="strtbtn">
             <input type="button" id="stbtn" value="Start game"/>
@@ -115,37 +145,8 @@
           />
         </div>
 
-        <div class="stats">
-          <div class="SHead">
-            <p class="sh3">Score</p>
-          </div>
-            <p id="toss">Toss</p>
-            <div class="runss">
-              <div class="cruns">
-                <p>Computer run</p>
-              </div>
-              <div class="uruns">
-                <p>Your run</p>
-              </div>
-            </div>
-        <div class="num">
-          <div id="cnum">
-            <p id="cnumr">0(0)</p>
-            <p id="cnumo">NOT OUT</p>
-          </div>
-          <div id="unum">
-            <p id="unumr">0(0)</p>
-            <p id="unumo">NOT OUT</p>
-          </div>
-        </div>
-        <!-- <p id="Uruncount">You run count is 0</p>
-        <p id="Cruncount"> Computer run count is 0</p>
-        <p id="attemptC">Ball count is 0</p> -->
-        <div class="winT">
-          <p id="winner">Result</p>
-        </div>
-      </div>
-</div>
+       
+    </div>
       <div class="rules" id="rules">
         <h5>Game rules and features:</h5>
         <p>1. The most important rule, if you and your opponent(or computer) guess the same number, then batting side player will considered as OUT.</p>
