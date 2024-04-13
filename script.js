@@ -165,7 +165,7 @@ function UserBat() {
           stbtn.value = "New Game";
         }
         else if(crun>run){
-          winner.innerText = "Computer WON the match on last ball";
+          winner.innerText = "Computer WON the match";
           strtbtn.style.display = "flex";
           stbtn.value = "New Game";
         }
@@ -252,7 +252,7 @@ function UserBall() {
           stbtn.value = "New Game";
         }
         else if(run>crun){
-          winner.innerText = "You WON the match on last ball";
+          winner.innerText = "You WON the match";
           strtbtn.style.display = "flex";
           stbtn.value = "New Game";
         }
