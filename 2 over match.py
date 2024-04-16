@@ -1,10 +1,10 @@
 # It will not run with Main project(included just for more info)
 # It is different than main project hand cricket game
 # It is Command Line Interface(I developed it in 2022) of Hand cricket 
-# But both UI and CLI version of this game working on different logical design
+# But both UI and CLI version of this game working on different LOGICAL design
+import random
 while 1:   
     try:
-        import random
         run=0
         crun=0
         attempt=0
